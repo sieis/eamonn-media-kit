@@ -1,328 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eamonn Cottrell — Media Kit</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="main.css">
-  <style>
-    /* ============================================================
-       MEDIA KIT — page-specific styles
-       ============================================================ */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eamonn Cottrell — Rate Card</title>
+<meta name="description" content="2026 sponsorship rates for the Eamonn Cottrell channel: AI, automation, and developer tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#17160F;
+    --paper:#F8F7F3;
+    --paper-dim:#EFEDE5;
+    --muted:#6F6B60;
+    --line:#DCD8CD;
+    --line-dark:rgba(237,233,223,.14);
+    --bone:#EDE9DF;
+    --bone-dim:rgba(237,233,223,.62);
+    --accent:#E4452A;
+    --maxw:880px;
+    --bodyw:720px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    font-feature-settings:"tnum" 0;
+  }
+  .mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
 
-    /* Profile / hero avatar */
-    .profile-avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      border: 2px solid var(--accent-border);
-      object-fit: cover;
-      margin: 0 auto 18px;
-      display: block;
-    }
+  /* ---------- masthead ---------- */
+  .mast{background:var(--ink);color:var(--bone);padding:clamp(28px,5vw,52px) 24px clamp(34px,5vw,56px)}
+  .mast-inner{max-width:var(--maxw);margin:0 auto}
+  .mast-top{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--bone-dim);
+    padding-bottom:clamp(28px,5vw,46px);
+  }
+  .mast-top .dot{color:var(--accent)}
+  .mast-main{display:flex;gap:clamp(24px,5vw,48px);align-items:flex-start;flex-wrap:wrap-reverse}
+  .mast-id{flex:1 1 340px;min-width:280px}
+  h1{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(2.3rem,6.6vw,3.5rem);line-height:.96;letter-spacing:-.025em;
+  }
+  .lede{
+    margin-top:18px;max-width:44ch;font-size:clamp(1.02rem,2.4vw,1.18rem);
+    line-height:1.45;color:var(--bone)
+  }
+  .stats{list-style:none;display:flex;gap:clamp(20px,5vw,40px);margin-top:30px;flex-wrap:wrap}
+  .stats li{display:flex;flex-direction:column;gap:3px}
+  .stats b{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:1.5rem;font-variant-numeric:tabular-nums;line-height:1}
+  .stats span{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-dim)}
+  .who{margin-top:24px;font-size:.92rem;color:var(--bone-dim);max-width:50ch}
 
-    /* Platform link rows */
-    .platform-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+  /* headshot */
+  .shot{position:relative;flex:0 0 auto;width:clamp(150px,38vw,210px);aspect-ratio:1/1;
+    border-radius:4px;overflow:hidden;border:1px solid var(--line-dark)}
+  .shot-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+  .shot-ph{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:8px;
+    background:linear-gradient(150deg,#221F16,#16140E);color:var(--bone-dim)}
+  .shot-ph span{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:2rem;color:var(--bone)}
+  .shot-ph small{font-family:"JetBrains Mono",monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase}
 
-    .platform-link {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 14px 18px;
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-left: 2px solid var(--accent);
-        border-radius: var(--radius-sm);
-        text-decoration: none;
-        color: var(--text);
-        font-size: 14px;
-        font-weight: 500;
-        transition: border-color 0.15s ease, background 0.15s ease, transform 0.12s ease;
-        box-shadow: var(--shadow-soft);
-    }
+  /* ---------- body ---------- */
+  .body{max-width:var(--bodyw);margin:0 auto;padding:clamp(40px,7vw,72px) 24px 0}
+  section{margin-bottom:clamp(40px,7vw,64px)}
+  .eyebrow{
+    display:flex;align-items:center;gap:10px;
+    font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.78rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);
+    padding-bottom:22px;margin-bottom:6px;border-bottom:1px solid var(--line)
+  }
+  .tick{width:9px;height:9px;background:var(--accent);flex:0 0 auto}
 
-    .platform-link:hover {
-      background: var(--surface-hover);
-      border-color: rgba(108, 92, 231, 0.30);
-      transform: translateX(3px);
-    }
+  .group{margin-top:26px}
+  .grp-label{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.72rem;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .ledger{display:flex;flex-direction:column}
+  .row{display:flex;justify-content:space-between;align-items:baseline;gap:18px;
+    padding:15px 6px;border-bottom:1px solid var(--line);transition:background .18s ease,padding .18s ease}
+  .row:hover{background:var(--paper-dim);padding-left:12px;padding-right:12px}
+  .row dt{font-size:1.04rem;font-weight:500}
+  .row dt em{font-family:"JetBrains Mono",monospace;font-style:normal;font-size:.76rem;
+    color:var(--muted);margin-left:9px;letter-spacing:.02em}
+  .row dd{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:1.12rem;
+    font-variant-numeric:tabular-nums;white-space:nowrap}
 
-    .platform-link .platform-name {
-      color: var(--text-secondary);
-      font-size: 12px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
+  /* bundle */
+  .bundle{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+    margin-top:30px;padding:22px 24px;background:var(--paper-dim);
+    border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:3px}
+  .bundle-l .grp-label{margin-bottom:4px}
+  .bundle-l p{font-size:1.02rem;font-weight:500;max-width:34ch}
+  .bundle-r{font-family:"JetBrains Mono",monospace;font-weight:700;
+    font-size:clamp(1.7rem,5.5vw,2.15rem);font-variant-numeric:tabular-nums;color:var(--accent)}
 
-    .platform-link .platform-detail {
-      font-size: 13px;
-      color: var(--text-secondary);
-    }
+  /* how I work */
+  .terms{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:16px}
+  .terms li{display:flex;gap:14px;font-size:1.03rem;line-height:1.5}
+  .terms li::before{content:"";flex:0 0 auto;width:7px;height:7px;margin-top:.55em;
+    background:var(--ink);transform:rotate(45deg)}
 
-    /* Package pricing cards */
-    .package-price {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--green);
-      white-space: nowrap;
-    }
+  /* contact */
+  .contact-line{font-size:clamp(1.05rem,2.6vw,1.22rem);line-height:1.5;max-width:42ch;margin-top:22px}
+  .btn{display:inline-flex;align-items:center;gap:10px;margin-top:24px;
+    font-family:"JetBrains Mono",monospace;font-size:.86rem;font-weight:500;letter-spacing:.06em;
+    text-transform:uppercase;text-decoration:none;color:var(--paper);background:var(--accent);
+    padding:14px 22px;border-radius:3px;transition:transform .16s ease,filter .16s ease}
+  .btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+  .btn .arw{transition:transform .16s ease}
+  .btn:hover .arw{transform:translateX(3px)}
 
-    .package-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
+  /* footer */
+  .foot{max-width:var(--bodyw);margin:0 auto;padding:28px 24px clamp(40px,7vw,64px);
+    border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    font-family:"JetBrains Mono",monospace;font-size:.74rem;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--muted)}
+  .foot a{color:var(--muted);text-decoration:none}
+  .foot a:hover{color:var(--accent)}
 
-    .package-title {
-      font-family: var(--font-display);
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--text);
-    }
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
-    .package-meta {
-      font-size: 13px;
-      color: var(--text-secondary);
-      margin-top: 4px;
-    }
+  /* load motion */
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+    .mast-id{animation-delay:.05s}
+    .shot{animation-delay:.16s}
+    .r1{animation-delay:.12s}.r2{animation-delay:.18s}.r3{animation-delay:.24s}.r4{animation-delay:.3s}
+    @keyframes rise{to{opacity:1;transform:none}}
+  }
 
-    .package-items {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-      margin-top: 12px;
-    }
+  @media (max-width:560px){
+    .mast-main{flex-wrap:wrap}
+    .shot{width:118px}
+    .stats{gap:22px}
+    .bundle{flex-direction:column;align-items:flex-start}
+  }
 
-    .package-items li {
-      font-size: 13px;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
-
-    .package-items li::before {
-      content: "→";
-      color: var(--accent);
-      flex-shrink: 0;
-      font-size: 12px;
-      margin-top: 1px;
-    }
-
-    /* Add-ons table inside a box */
-    .addon-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 13px;
-    }
-
-    .addon-row:last-child {
-      border-bottom: none;
-    }
-
-    .addon-row .addon-label {
-      color: var(--text-secondary);
-    }
-
-    .addon-row .addon-price {
-      font-family: var(--font-display);
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    /* Section heading row */
-    .section-heading {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-
-    .section-heading h2 {
-      margin-bottom: 0;
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-secondary);
-    }
-
-    .section-heading::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* CTA block */
-    .cta-block {
-      text-align: center;
-      padding: 40px 24px;
-      background: linear-gradient(180deg, rgba(231, 92, 92, 0.10), rgba(231, 92, 92, 0.03));
-      border: 1px solid rgba(231, 92, 92, 0.22);
-      border-radius: var(--radius);
-      margin-bottom: var(--gap);
-    }
-
-    .cta-block p {
-      margin-bottom: 20px;
-    }
-
-    /* Responsive */
-    @media (max-width: 640px) {
-      .package-header { flex-direction: column; }
-    }
-  </style>
+  @media print{
+    .mast{background:#fff;color:#000;border-bottom:2px solid #000}
+    .mast-top,.stats span,.who,.lede{color:#333}
+    .stats b,h1{color:#000}
+    .shot-ph{background:#eee;color:#666}
+    .btn{display:none}
+    .reveal{opacity:1!important;transform:none!important;animation:none!important}
+  }
+</style>
 </head>
 <body>
 
-  <!-- Hero -->
-  <div class="hero">
-    <span class="logo-mark">Media Kit 2025</span>
-    <img
-      src="/assets/yt ai.jpg"
-      alt="Eamonn Cottrell"
-      class="profile-avatar"
-    >
-    <h1>Eamonn Cottrell</h1>
-    <p class="subheading">Educational &amp; product-focused video content for professionals, creators, and small businesses.</p>
-    <p class="subheading-detail">Clarity, real-world use cases, and honest evaluation — built for high-intent audiences.</p>
-  </div>
-
-  <main>
-    <div class="container">
-
-
-      <!-- Platforms -->
-      <div class="section-heading"><h2>Platforms</h2><span style="font-size: 12px; color: var(--text-secondary); opacity: 0.7; margin-left: 4px;">2025 PERFORMANCE</span></div>
-      <div class="box" style="padding: 14px; margin-bottom: var(--gap);">
-        <div class="platform-list">
-          <a href="https://www.youtube.com/@eamonncottrell" class="platform-link" target="_blank" rel="noopener">
-            <div>
-              <div class="platform-name">YouTube · AI &amp; Tech</div>
-              <div style="color: var(--text); font-size: 14px; font-weight: 500; margin-top: 2px;">Eamonn Cottrell <span class="badge badge--green" style="margin-left: 8px;">9,500+ subs · 20K hrs watch time</span></div>
-            </div>
-            <div style="font-size: 13px; font-weight: 600; color: var(--accent); white-space: nowrap;">Visit →</div>
-          </a>
-          <a href="https://www.youtube.com/@eamonnreviews" class="platform-link" target="_blank" rel="noopener">
-            <div>
-              <div class="platform-name">YouTube · Reviews</div>
-              <div style="color: var(--text); font-size: 14px; font-weight: 500; margin-top: 2px;">Eamonn Reviews <span class="badge badge--green" style="margin-left: 8px;">116K+ views</span></div>
-            </div>
-            <div style="font-size: 13px; font-weight: 600; color: var(--accent); white-space: nowrap;">Visit →</div>
-          </a>
-          <a href="https://www.amazon.com/shop/eamonncottrell" class="platform-link" target="_blank" rel="noopener">
-            <div>
-              <div class="platform-name">Amazon Storefront</div>
-              <div style="color: var(--text); font-size: 14px; font-weight: 500; margin-top: 2px;">Eamonn Cottrell Reviews <span class="badge badge--green" style="margin-left: 8px;">$93K+ revenue</span></div>
-            </div>
-            <div style="font-size: 13px; font-weight: 600; color: var(--accent); white-space: nowrap;">Visit →</div>
-          </a>
-          <a href="https://www.gotsheet.xyz/" class="platform-link" target="_blank" rel="noopener">
-            <div>
-              <div class="platform-name">Newsletter</div>
-              <div style="color: var(--text); font-size: 14px; font-weight: 500; margin-top: 2px;">Got Sheet <span class="badge badge--green" style="margin-left: 8px;">1,200+ subs · 56% open rate</span></div>
-            </div>
-            <div style="font-size: 13px; font-weight: 600; color: var(--accent); white-space: nowrap;">Visit →</div>
-          </a>
-        </div>
+  <header class="mast">
+    <div class="mast-inner">
+      <div class="mast-top reveal">
+        <span>Rate card <span class="dot">/</span> 2026</span>
+        <span>YouTube <span class="dot">/</span> @eamonncottrell</span>
       </div>
+      <div class="mast-main">
+        <div class="mast-id reveal">
+          <h1>Eamonn<br>Cottrell</h1>
+          <p class="lede">Hands-on videos about AI, automation, spreadsheets and developer tools.</p>
+          <!-- Update these three numbers with your current figures before publishing -->
+          <ul class="stats">
+            <li><b>11.8K</b><span>Subscribers</span></li>
+            <li><b>3.1M+</b><span>Total views</span></li>
+            <li><b>212K</b><span>Views last 28 days</span></li>
+          </ul>
+          <p class="who">Business builders, owners and operators with buying power for AI and developer tools.</p>
+        </div>
 
-      <!-- Packages -->
-      <div class="section-heading"><h2>Collaboration Packages</h2></div>
-
-      <div class="box">
-        <div class="package-header">
-          <div>
-            <div class="package-title">Product Review &amp; Amazon Placement</div>
-            <div class="package-meta">Dedicated review on Eamonn Reviews · timeline 5–10 business days from product receipt</div>
+        <figure class="shot reveal">
+          <img class="shot-img" src="./assets/headshot.jpg" alt="Eamonn Cottrell" onerror="this.remove()">
+          <div class="shot-ph" aria-hidden="true">
+            <span>EC</span>
+            <small>headshot.jpg</small>
           </div>
-          <div class="package-price">$150</div>
-        </div>
-        <ul class="package-items">
-          <li>Dedicated review on Eamonn Reviews YouTube channel (2–8 minutes)</li>
-          <li>Amazon storefront product video placement</li>
-          <li>Product links in video description</li>
-          <li>Honest assessment with FTC disclosure</li>
-        </ul>
+        </figure>
       </div>
-
-      <div class="box">
-        <div class="package-header">
-          <div>
-            <div class="package-title">Software / Service Feature <span class="badge badge--accent" style="margin-left: 8px;">Tech Channel</span></div>
-            <div class="package-meta">Best for AI software, SaaS platforms, subscription tools, business services</div>
-          </div>
-          <div class="package-price">$300–$500</div>
-        </div>
-        <ul class="package-items">
-          <li>Integration or dedicated feature on the main tech channel</li>
-          <li>Real-world use case demonstration</li>
-          <li>Link placement in video description</li>
-        </ul>
-      </div>
-
-      <!-- Add-ons -->
-      <div class="section-heading"><h2>Optional Add-Ons</h2></div>
-      <div class="box" style="padding: 14px 18px;">
-        <div class="addon-row">
-          <span class="addon-label">YouTube Shorts clip</span>
-          <span class="addon-price">+$25</span>
-        </div>
-        <div class="addon-row">
-          <span class="addon-label">Pinned comment, dedicated posts, newsletter mentions</span>
-          <span class="addon-price">Custom</span>
-        </div>
-        <div class="addon-row">
-          <span class="addon-label">Extended usage rights</span>
-          <span class="addon-price">Custom</span>
-        </div>
-      </div>
-
-      <!-- Brand Fit -->
-      <div class="section-heading"><h2>Brand Fit</h2></div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); margin-bottom: var(--gap);">
-        <div class="box">
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
-            <span class="badge badge--green">✓ Ideal</span>
-          </div>
-          <p>Software &amp; SaaS tools, creator tools, productivity software, business services, and select physical products with clear utility.</p>
-        </div>
-        <div class="box">
-          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
-            <span class="badge badge--red">✗ Not accepted</span>
-          </div>
-          <p>Scripted endorsements, products misaligned with the audience, or guaranteed performance outcomes.</p>
-        </div>
-      </div>
-
-      <div class="alert alert--info" style="margin-bottom: 24px;">
-        All reviews maintain editorial independence and include FTC-compliant disclosure.
-      </div>
-
-      <!-- CTA -->
-      <div class="cta-block">
-        <div class="logo-mark" style="margin-bottom: 12px;">Ready to Collaborate?</div>
-        <p>Reach out to discuss your product or service.</p>
-        <a href="mailto:eamonncottrell@gmail.com" class="btn btn--primary">eamonncottrell@gmail.com</a>
-      </div>
-
     </div>
+  </header>
+
+  <main class="body">
+
+    <section class="rates">
+      <h2 class="eyebrow reveal r1"><span class="tick"></span>2026 rates</h2>
+
+      <div class="group reveal r2">
+        <h3 class="grp-label">Per deliverable</h3>
+        <dl class="ledger">
+          <div class="row"><dt>Dedicated video <em>5-8 min</em></dt><dd>$1,500</dd></div>
+          <div class="row"><dt>Integrated segment <em>60-90 sec</em></dt><dd>$800</dd></div>
+          <div class="row"><dt>Short / Reel <em>crossposted to TikTok</em></dt><dd>$900</dd></div>
+          <div class="row"><dt>Newsletter mention</dt><dd>+$350</dd></div>
+        </dl>
+      </div>
+
+      <div class="group reveal r3">
+        <h3 class="grp-label">Add-ons</h3>
+        <dl class="ledger">
+          <div class="row"><dt>30-day paid ad / usage rights</dt><dd>+40%</dd></div>
+          <div class="row"><dt>30-day direct category exclusivity</dt><dd>+25%</dd></div>
+        </dl>
+      </div>
+
+      <div class="bundle reveal r4">
+        <div class="bundle-l">
+          <span class="grp-label">Bundle</span>
+          <p>Dedicated video + integration + short, together.</p>
+        </div>
+        <div class="bundle-r">$3,000</div>
+      </div>
+    </section>
+
+    <section class="how">
+      <h2 class="eyebrow"><span class="tick"></span>How I work</h2>
+      <ul class="terms">
+        <li>50% to book the slot; balance paid when published.</li>
+        <li>I build the content around your brief with my own creative direction; you review for product accuracy, not content approval.</li>
+        <li>One revision round included; extra rounds billed hourly.</li>
+      </ul>
+    </section>
+
+    <section class="contact">
+      <h2 class="eyebrow"><span class="tick"></span>Work together</h2>
+      <p class="contact-line">Got something in mind? Send over the deliverables you're after and I'll get you a firm quote and a date.</p>
+      <a class="btn" href="mailto:eamonncottrell@gmail.com?subject=Sponsorship%20inquiry">Get in touch <span class="arw">&rarr;</span></a>
+      <p><em>eamonncottrell at gmail</em></p>
+    </section>
+
   </main>
+
+  <footer class="foot">
+    <span>Eamonn Cottrell</span>
+    <a href="https://youtube.com/@eamonncottrell">youtube.com/@eamonncottrell</a>
+  </footer>
 
 </body>
 </html>
