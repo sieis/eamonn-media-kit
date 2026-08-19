@@ -7,127 +7,141 @@
 <meta name="description" content="2026 sponsorship rates for the Eamonn Cottrell channel: AI, automation, and developer tools.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#17160F;
-    --paper:#F8F7F3;
-    --paper-dim:#EFEDE5;
-    --muted:#6F6B60;
-    --line:#DCD8CD;
-    --line-dark:rgba(237,233,223,.14);
-    --bone:#EDE9DF;
-    --bone-dim:rgba(237,233,223,.62);
-    --accent:#E4452A;
+    --ink:#151a18;
+    --ink-2:#454e4a;
+    --ink-3:#666e69;
+    --bg:#ffffff;
+    --bg-alt:#f6f5f0;
+    --line:#e4e2d9;
+    --line-strong:#d3d0c5;
+    --accent:#173f35;
+    --accent-2:#2f6657;
+    --warm:#d97941;
+    --warm-ink:#a2551f;
+    --grad:linear-gradient(102deg,var(--accent) 0%,var(--accent-2) 100%);
+    --accent-line:color-mix(in srgb,var(--accent) 24%,transparent);
+    --accent-glow:color-mix(in srgb,var(--accent) 28%,transparent);
+    --accent-ring:color-mix(in srgb,var(--accent) 18%,transparent);
+    --radius-sm:10px;
+    --radius:16px;
+    --radius-lg:24px;
+    --shadow-sm:0 1px 2px rgba(21,26,24,.04);
+    --shadow:0 4px 24px rgba(21,26,24,.07);
+    --shadow-lg:0 18px 48px rgba(21,26,24,.13);
+    --ease:cubic-bezier(0.2,0.7,0.2,1);
     --maxw:880px;
     --bodyw:720px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{-webkit-text-size-adjust:100%}
   body{
-    background:var(--paper);
+    background:var(--bg-alt);
     color:var(--ink);
-    font-family:"Inter",system-ui,sans-serif;
+    font-family:"Inter Variable",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
-    font-feature-settings:"tnum" 0;
   }
-  .mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+  h1,h2,h3{font-weight:620;letter-spacing:-.035em;line-height:1.08;text-wrap:balance}
 
   /* ---------- masthead ---------- */
-  .mast{background:var(--ink);color:var(--bone);padding:clamp(28px,5vw,52px) 24px clamp(34px,5vw,56px)}
+  .mast{background:var(--grad);color:#fff;padding:clamp(28px,5vw,52px) 24px clamp(34px,5vw,56px)}
   .mast-inner{max-width:var(--maxw);margin:0 auto}
   .mast-top{
     display:flex;justify-content:space-between;align-items:center;gap:16px;
-    font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.16em;
-    text-transform:uppercase;color:var(--bone-dim);
+    font-size:.74rem;font-weight:600;letter-spacing:.12em;
+    text-transform:uppercase;color:rgba(255,255,255,.7);
     padding-bottom:clamp(28px,5vw,46px);
   }
-  .mast-top .dot{color:var(--accent)}
+  .mast-top .dot{color:rgba(255,255,255,.45)}
   .mast-main{display:flex;gap:clamp(24px,5vw,48px);align-items:flex-start;flex-wrap:wrap-reverse}
   .mast-id{flex:1 1 340px;min-width:280px}
-  h1{
-    font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
-    font-size:clamp(2.3rem,6.6vw,3.5rem);line-height:.96;letter-spacing:-.025em;
-  }
+  h1{font-size:clamp(2.5rem,6.6vw,4.25rem)}
   .lede{
-    margin-top:18px;max-width:44ch;font-size:clamp(1.02rem,2.4vw,1.18rem);
-    line-height:1.45;color:var(--bone)
+    margin-top:18px;max-width:46ch;font-size:clamp(1.05rem,2.4vw,1.22rem);
+    line-height:1.5;color:rgba(255,255,255,.86)
   }
   .stats{list-style:none;display:flex;gap:clamp(20px,5vw,40px);margin-top:30px;flex-wrap:wrap}
   .stats li{display:flex;flex-direction:column;gap:3px}
-  .stats b{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:1.5rem;font-variant-numeric:tabular-nums;line-height:1}
-  .stats span{font-family:"JetBrains Mono",monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-dim)}
-  .who{margin-top:24px;font-size:.92rem;color:var(--bone-dim);max-width:50ch}
+  .stats b{font-weight:700;font-size:1.5rem;font-variant-numeric:tabular-nums;line-height:1}
+  .stats span{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65)}
+  .who{margin-top:24px;font-size:.94rem;color:rgba(255,255,255,.72);max-width:50ch}
 
   /* headshot */
   .shot{position:relative;flex:0 0 auto;width:clamp(150px,38vw,210px);aspect-ratio:1/1;
-    border-radius:4px;overflow:hidden;border:1px solid var(--line-dark)}
+    border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
   .shot-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
   .shot-ph{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;
     align-items:center;justify-content:center;gap:8px;
-    background:linear-gradient(150deg,#221F16,#16140E);color:var(--bone-dim)}
-  .shot-ph span{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:2rem;color:var(--bone)}
-  .shot-ph small{font-family:"JetBrains Mono",monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase}
+    background:linear-gradient(150deg,var(--accent-2),var(--accent));color:rgba(255,255,255,.85)}
+  .shot-ph span{font-weight:700;font-size:2rem;color:#fff}
+  .shot-ph small{font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 
   /* ---------- body ---------- */
   .body{max-width:var(--bodyw);margin:0 auto;padding:clamp(40px,7vw,72px) 24px 0}
   section{margin-bottom:clamp(40px,7vw,64px)}
   .eyebrow{
     display:flex;align-items:center;gap:10px;
-    font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.78rem;
-    letter-spacing:.16em;text-transform:uppercase;color:var(--ink);
+    font-size:.76rem;font-weight:600;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);
     padding-bottom:22px;margin-bottom:6px;border-bottom:1px solid var(--line)
   }
-  .tick{width:9px;height:9px;background:var(--accent);flex:0 0 auto}
+  .eyebrow-dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto;background:var(--grad)}
 
   .group{margin-top:26px}
-  .grp-label{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:.72rem;
-    letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-  .ledger{display:flex;flex-direction:column}
+  .grp-label{font-size:.74rem;font-weight:600;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+  .ledger{display:flex;flex-direction:column;gap:10px}
   .row{display:flex;justify-content:space-between;align-items:baseline;gap:18px;
-    padding:15px 6px;border-bottom:1px solid var(--line);transition:background .18s ease,padding .18s ease}
-  .row:hover{background:var(--paper-dim);padding-left:12px;padding-right:12px}
-  .row dt{font-size:1.04rem;font-weight:500}
-  .row dt em{font-family:"JetBrains Mono",monospace;font-style:normal;font-size:.76rem;
-    color:var(--muted);margin-left:9px;letter-spacing:.02em}
-  .row dd{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:1.12rem;
+    padding:16px 18px;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);transition:transform .18s var(--ease),box-shadow .18s var(--ease)}
+  .row:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+  .row dt{font-size:1.02rem;font-weight:500}
+  .row dt em{font-style:normal;font-size:.82rem;font-weight:400;
+    color:var(--ink-3);margin-left:9px}
+  .row dd{font-weight:700;font-size:1.14rem;color:var(--accent);
     font-variant-numeric:tabular-nums;white-space:nowrap}
-  .note{margin-top:12px;font-size:.94rem;line-height:1.55;color:var(--muted);max-width:52ch}
+  .note{margin-top:14px;font-size:.94rem;line-height:1.55;color:var(--ink-2);max-width:56ch}
 
   /* how I work */
   .terms{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:16px}
-  .terms li{display:flex;gap:14px;font-size:1.03rem;line-height:1.5}
-  .terms li::before{content:"";flex:0 0 auto;width:7px;height:7px;margin-top:.55em;
-    background:var(--ink);transform:rotate(45deg)}
+  .terms li{display:flex;gap:14px;font-size:1.02rem;line-height:1.5;color:var(--ink-2)}
+  .terms li::before{content:"";flex:0 0 auto;width:8px;height:8px;margin-top:.5em;
+    border-radius:50%;background:var(--grad)}
 
   /* contact */
   .contact-line{font-size:clamp(1.05rem,2.6vw,1.22rem);line-height:1.5;max-width:42ch;margin-top:22px}
   .btn{display:inline-flex;align-items:center;gap:10px;margin-top:24px;
-    font-family:"JetBrains Mono",monospace;font-size:.86rem;font-weight:500;letter-spacing:.06em;
-    text-transform:uppercase;text-decoration:none;color:var(--paper);background:var(--accent);
-    padding:14px 22px;border-radius:3px;transition:transform .16s ease,filter .16s ease}
-  .btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
-  .btn .arw{transition:transform .16s ease}
+    font-size:.92rem;font-weight:600;letter-spacing:.01em;
+    text-decoration:none;color:#fff;background:var(--grad);
+    padding:14px 26px;border-radius:999px;box-shadow:0 4px 18px var(--accent-glow);
+    transition:transform .18s var(--ease),box-shadow .18s var(--ease)}
+  .btn:hover{box-shadow:0 10px 28px var(--accent-glow);transform:translateY(-2px)}
+  .btn .arw{transition:transform .18s var(--ease)}
   .btn:hover .arw{transform:translateX(3px)}
+  .contact p{margin-top:14px;font-size:.86rem;color:var(--ink-3)}
 
   /* footer */
   .foot{max-width:var(--bodyw);margin:0 auto;padding:28px 24px clamp(40px,7vw,64px);
     border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
-    font-family:"JetBrains Mono",monospace;font-size:.74rem;letter-spacing:.06em;
-    text-transform:uppercase;color:var(--muted)}
-  .foot a{color:var(--muted);text-decoration:none}
+    font-size:.78rem;font-weight:600;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--ink-3)}
+  .foot a{color:var(--ink-3);text-decoration:none;transition:color .18s var(--ease)}
   .foot a:hover{color:var(--accent)}
 
-  a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 
   /* load motion */
   @media (prefers-reduced-motion:no-preference){
-    .reveal{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards}
+    .reveal{opacity:0;transform:translateY(16px);animation:rise .7s var(--ease) forwards}
     .mast-id{animation-delay:.05s}
     .shot{animation-delay:.16s}
     .r1{animation-delay:.12s}.r2{animation-delay:.18s}.r3{animation-delay:.24s}.r4{animation-delay:.3s}
     @keyframes rise{to{opacity:1;transform:none}}
+    .eyebrow-dot{animation:pulse 2.4s var(--ease) infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
   }
 
   @media (max-width:560px){
@@ -181,7 +195,7 @@
   <main class="body">
 
     <section class="rates">
-      <h2 class="eyebrow reveal r1"><span class="tick"></span>2026 rates</h2>
+      <h2 class="eyebrow reveal r1"><span class="eyebrow-dot"></span>2026 rates</h2>
 
       <div class="group reveal r2">
         <h3 class="grp-label">In-video integrations</h3>
@@ -199,7 +213,7 @@
     </section>
 
     <section class="how">
-      <h2 class="eyebrow"><span class="tick"></span>How I work</h2>
+      <h2 class="eyebrow"><span class="eyebrow-dot"></span>How I work</h2>
       <ul class="terms">
         <li>50% to book the slot; balance paid when published.</li>
         <li>I build the content around your brief with my own creative direction; you review for product accuracy, not content approval.</li>
@@ -208,7 +222,7 @@
     </section>
 
     <section class="contact">
-      <h2 class="eyebrow"><span class="tick"></span>Work together</h2>
+      <h2 class="eyebrow"><span class="eyebrow-dot"></span>Work together</h2>
       <a class="btn" href="mailto:eamonncottrell@gmail.com?subject=Sponsorship%20inquiry">Get in touch <span class="arw">&rarr;</span></a>
       <p><em>eamonncottrell at gmail</em></p>
     </section>
